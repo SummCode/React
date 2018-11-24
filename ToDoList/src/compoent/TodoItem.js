@@ -1,9 +1,9 @@
 import React from 'react';
 
-import todoItem from '../css/todoItem.css'
+import '../css/todoItem.css'
 
 
-class TodoItem extends React.Component {
+export default class TodoItem extends React.Component {
 
     constructor(props) {
         super(props);
@@ -25,10 +25,10 @@ class TodoItem extends React.Component {
     render() {
         const {item} = this.props;
         return (
-            <div className="todo-list-item" >
-                <div className='todo-item'>
-                    <input type="checkbox" className='todo-item-checkbox' onClick={this.handleChecked}
-                           checked={item.checked}/>
+            <div className='todo-item-group'>
+                <div className='todo-item-container'>
+                    <input className='todo-item-checkbox' type="checkbox" onClick={this.handleChecked}
+                           checked={item.isChecked}/>
                     <div className='todo-item-content' dangerouslySetInnerHTML={{__html: item.content}}/>
                     <div className='todo-item-delete' onClick={this.handleDelete}>-</div>
                 </div>
@@ -38,5 +38,3 @@ class TodoItem extends React.Component {
 
 
 }
-
-export default TodoItem;

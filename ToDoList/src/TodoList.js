@@ -1,26 +1,24 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component,} from 'react';
 
+import TodoHeader from './compoent/TodoHeader';
 import TodoItem from './compoent/TodoItem';
 import CompleteItem from './compoent/CompleteItem';
 
+import './todoList.css'
 
-class TodoList extends Component {
+export default class TodoList extends Component {
 
 
     constructor(props) {
         super(props);
         this.state = {
-            inputContent: '',
-
             toDoList: [],
             toDoSize: 0,
 
             completeList: [],
             completeSize: 0,
         };
-        this.itemInput = this.itemInput.bind(this);
         this.itemAdd = this.itemAdd.bind(this);
-        this.handlerKeyUp = this.handlerKeyUp.bind(this);
 
         this.getTodoItems = this.getTodoItems.bind(this);
         this.toDoItemDelete = this.toDoItemDelete.bind(this);
@@ -29,40 +27,26 @@ class TodoList extends Component {
         this.getCompleteItems = this.getCompleteItems.bind(this);
         this.completeItemDelete = this.completeItemDelete.bind(this);
         this.completeItemChecked = this.completeItemChecked.bind(this);
+
     }
 
-    handlerKeyUp(event) {
-        let value = event.target.value;
-        if (!value) return false;
 
-        let keyCode = event.keyCode;
-
-        switch (keyCode) {
-            case 13:
-                this.itemAdd();
-                break;
-            default:
-        }
-    }
-
-    itemAdd() {
-        if (this.state.inputContent.length === 0) {
-            return;
-        }
-        let item = {
-            checked: false,
-            content: this.state.inputContent,
-        };
+    itemAdd(item) {
         this.setState({
             toDoList: [...this.state.toDoList, item],
             toDoSize: this.state.toDoSize + 1,
-            inputContent: '',
         });
     }
 
-    itemInput(e) {
+    toDoItemChecked(index) {
+        const list = [...this.state.toDoList];
+        let item = list[index];
+        item.isChecked = !item.isChecked;
+        this.toDoItemDelete(index);
         this.setState({
-            inputContent: e.target.value
+            completeList: [...this.state.completeList, item],
+            completeSize: this.state.completeSize + 1,
+            toDoSize: this.state.toDoSize - 1,
         });
     }
 
@@ -75,15 +59,15 @@ class TodoList extends Component {
         })
     }
 
-    toDoItemChecked(index) {
-        const list = [...this.state.toDoList];
+    completeItemChecked(index) {
+        const list = [...this.state.completeList];
         let item = list[index];
-        item.checked = !item.checked;
-        this.toDoItemDelete(index);
+        this.completeItemDelete(index);
+        item.isChecked = !item.isChecked;
         this.setState({
-            completeList: [...this.state.completeList, item],
-            completeSize: this.state.completeSize + 1,
-            toDoSize: this.state.toDoSize - 1,
+            toDoList: [...this.state.toDoList, item],
+            toDoSize: this.state.toDoSize + 1,
+            completeSize: this.state.completeSize - 1,
         });
     }
 
@@ -94,18 +78,6 @@ class TodoList extends Component {
             completeList: list,
             completeSize: list.length,
         })
-    }
-
-    completeItemChecked(index) {
-        const list = [...this.state.completeList];
-        let item = list[index];
-        item.checked = !item.checked;
-        this.completeItemDelete(index);
-        this.setState({
-            toDoList: [...this.state.toDoList, item],
-            toDoSize: this.state.toDoSize + 1,
-            completeSize: this.state.completeSize - 1,
-        });
     }
 
     getTodoItems(list) {
@@ -141,13 +113,8 @@ class TodoList extends Component {
 
     render() {
         return (
-            <div className=''>
-                <div className='header'>
-                    <span className='title-name'>ToDoList</span>
-                    <input className='input-frame' value={this.state.inputContent} onChange={this.itemInput}
-                           placeholder='添加ToDo' onKeyUp={this.handlerKeyUp}/>
-                    <button className='btn-add' onClick={this.itemAdd}>添加</button>
-                </div>
+            <div>
+                <TodoHeader addItem={this.itemAdd}/>
                 {/*正在进行*/}
                 <div className='todo'>
                     <div className='todo-layout'>
@@ -173,4 +140,3 @@ class TodoList extends Component {
     }
 }
 
-export default TodoList;
