@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import './App.css'
+import './App.css';
+
+import ComponentLifecycle from '../component/js/ComponentLifecycle';
+import FitScreen from '../component/js/FitScreen';
 
 export default class App extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

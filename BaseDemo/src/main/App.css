@@ -1,7 +1,10 @@
-.App{
+.App {
     width: 100%;
-    background-color: #CDCDCD;
+    height: 100%;
     display: flex;
     flex: 1;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    font-size: 1rem;
 }

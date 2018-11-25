@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../css/todoItem.css'
+import '../css/todoItem.css';
 
 
 export default class TodoItem extends React.Component {
@@ -12,24 +12,24 @@ export default class TodoItem extends React.Component {
     }
 
     handleDelete() {
-        const {itemDelete, index} = this.props;
+        const { itemDelete, index } = this.props;
         itemDelete(index);
     }
 
     handleChecked() {
-        const {itemChecked, index} = this.props;
+        const { itemChecked, index } = this.props;
         itemChecked(index);
     }
 
 
     render() {
-        const {item} = this.props;
+        const { item } = this.props;
         return (
             <div className='todo-item-group'>
                 <div className='todo-item-container'>
                     <input className='todo-item-checkbox' type="checkbox" onClick={this.handleChecked}
-                           checked={item.isChecked}/>
-                    <div className='todo-item-content' dangerouslySetInnerHTML={{__html: item.content}}/>
+                        checked={item.isChecked} />
+                    <div className='todo-item-content' dangerouslySetInnerHTML={{ __html: item.content }} />
                     <div className='todo-item-delete' onClick={this.handleDelete}>-</div>
                 </div>
             </div>

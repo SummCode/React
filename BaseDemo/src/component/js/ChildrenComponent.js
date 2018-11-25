@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 
-import '../css/ChildrenComponent.css'
+import '../css/ChildrenComponent.css';
 
 
 export default class ChildrenComponent extends Component {
@@ -30,7 +30,7 @@ export default class ChildrenComponent extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         console.log(' ChildrenComponent ====> shouldComponentUpdate() ');
-        let {item} = this.props;
+        let { item } = this.props;
         if (nextProps.item === item) {
             return false;
         }
@@ -53,7 +53,7 @@ export default class ChildrenComponent extends Component {
     render() {
         console.log(' ChildrenComponent ====> render() ');
 
-        let {item, index} = this.props;
+        let { item, index } = this.props;
         return (
             <div className='children-component' onClick={this.removeItem}>
                 <div className='children-component-container'>{(index + 1) + '. ' + item}</div>
@@ -62,7 +62,7 @@ export default class ChildrenComponent extends Component {
     }
 
     removeItem() {
-        let {index, removeItem} = this.props;
+        let { index, removeItem } = this.props;
         removeItem(index);
     }
 

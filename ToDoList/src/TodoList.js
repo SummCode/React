@@ -1,10 +1,10 @@
-import React, {Component,} from 'react';
+import React, { Component, } from 'react';
 
 import TodoHeader from './compoent/TodoHeader';
 import TodoItem from './compoent/TodoItem';
 import CompleteItem from './compoent/CompleteItem';
 
-import './todoList.css'
+import './todoList.css';
 
 export default class TodoList extends Component {
 
@@ -89,7 +89,7 @@ export default class TodoList extends Component {
                         itemChecked={this.toDoItemChecked}
                         key={index}
                         item={item}
-                        index={index}/>
+                        index={index} />
                 )
             })
         )
@@ -104,7 +104,7 @@ export default class TodoList extends Component {
                         itemChecked={this.completeItemChecked}
                         key={index}
                         item={item}
-                        index={index}/>
+                        index={index} />
                 )
             })
         )
@@ -114,7 +114,7 @@ export default class TodoList extends Component {
     render() {
         return (
             <div>
-                <TodoHeader addItem={this.itemAdd}/>
+                <TodoHeader addItem={this.itemAdd} />
                 {/*正在进行*/}
                 <div className='todo'>
                     <div className='todo-layout'>

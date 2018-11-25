@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react';
 
-import '../css/todoHeader.css'
+import '../css/todoHeader.css';
 
 
 export default class TodoHeader extends Component {
@@ -45,7 +45,7 @@ export default class TodoHeader extends Component {
             isChecked: false,
             content: this.state.content,
         };
-        const {addItem} = this.props;
+        const { addItem } = this.props;
         addItem(item);
         this.setState({
             content: '',
@@ -58,7 +58,7 @@ export default class TodoHeader extends Component {
                 <div className='todo-header-container'>
                     <span className='todo-header-name'>ToDoList</span>
                     <input className='todo-header-input' value={this.state.content} onChange={this.itemInput}
-                           placeholder='添加ToDo' onKeyUp={this.handlerKeyUp}/>
+                        placeholder='添加ToDo' onKeyUp={this.handlerKeyUp} />
                     <button className='todo-header-add' onClick={this.addItem}>添加</button>
                 </div>
             </div>

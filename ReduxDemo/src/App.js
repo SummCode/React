@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 
-import Header from './widget/js/Header'
-import TodoList from './widget/js/TodoList'
+import Header from './widget/js/Header';
+import TodoList from './widget/js/TodoList';
 
-import './App.css'
+import './App.css';
 
-import store from './store/index'
+import store from './store/index';
 
 
 export default class App extends Component {

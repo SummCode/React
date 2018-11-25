@@ -7,8 +7,9 @@
     margin-top: 10px;
 }
 
-.todo-list-body{
+.todo-list-body {
     width: 40%;
+    min-width: 750px;
     color: rgba(47, 47, 47, 0.8);
     padding: 10px;
     background-color: #e0e0e0;

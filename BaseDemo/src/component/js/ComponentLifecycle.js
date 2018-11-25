@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-import '../css/ComponentLifecycle.css'
+import '../css/ComponentLifecycle.css';
 
-import ChildrenComponent from './ChildrenComponent'
+import ChildrenComponent from './ChildrenComponent';
 
 
 export default class ComponentLifecycle extends Component {
@@ -61,7 +61,7 @@ export default class ComponentLifecycle extends Component {
                 <div className='component-lifecycle-parent'>
                     <div className='group-btn'>
                         <button className='btn' onClick={this.addComponent}>Add Component</button>
-                        {/*<button className='btn' onClick={this.removeComponent}>Remove Component</button>*/}
+                        <button className='btn' onClick={this.removeComponent}>Remove Component</button>
                         <button className='btn' onClick={this.updateComponent}>Show Children Component</button>
                     </div>
                 </div>
@@ -89,7 +89,7 @@ export default class ComponentLifecycle extends Component {
                         key={item}
                         item={item}
                         index={index}
-                        removeItem={this.removeComponent}/>
+                        removeItem={this.removeComponent} />
                 )
             })
         )

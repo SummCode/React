@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 
-import TodoItem from './TodoItem'
+import TodoItem from './TodoItem';
 
-import '../css/TodoList.css'
+import '../css/TodoList.css';
 
-import store from '../../store/index'
+import store from '../../store/index';
 
 
 export default class TodoList extends Component {

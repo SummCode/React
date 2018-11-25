@@ -1,4 +1,4 @@
-import {ADD_TODO_ITEM, TODO_ITEM_DELETE, TODO_ITEM_CHECKED, INPUT_CHANGE_VALUE} from './actionCodes'
+import { ADD_TODO_ITEM, TODO_ITEM_DELETE, TODO_ITEM_CHECKED, INPUT_CHANGE_VALUE } from './actionCodes';
 
 const defaultState = {
     content: '',
@@ -15,8 +15,8 @@ export default (state = defaultState, action) => {
             return newState;
         case ADD_TODO_ITEM:
 
-            if (newState.content.length == 0) {
-                return
+            if (newState.content.length === 0) {
+                return;
             }
 
             let item = {
@@ -28,7 +28,7 @@ export default (state = defaultState, action) => {
             return newState;
         case TODO_ITEM_CHECKED:
             console.log(action);
-            if (action.status == 0) {
+            if (action.status === 0) {
                 let index = action.position;
                 let item = {
                     content: newState.todoList[index].content,
@@ -49,7 +49,7 @@ export default (state = defaultState, action) => {
             console.log(newState.completeList);
             return newState;
         case TODO_ITEM_DELETE:
-            if (action.status == 0) {
+            if (action.status === 0) {
                 newState.todoList.splice(action.position, 1)
             } else {
                 newState.completeList.splice(action.position, 1)

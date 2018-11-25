@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import {ADD_TODO_ITEM, INPUT_CHANGE_VALUE} from '../../store/actionCodes'
-import '../css/Header.css'
+import React, { Component } from 'react';
+import { ADD_TODO_ITEM, INPUT_CHANGE_VALUE } from '../../store/actionCodes';
+import '../css/Header.css';
 
-import store from '../../store/index'
+import store from '../../store/index';
 
 
 export default class Header extends Component {
@@ -30,7 +30,7 @@ export default class Header extends Component {
             <div className="header">
                 <div className="header-body">
                     <div className="header-name">TodoList</div>
-                    <input className="header-input" value={this.state.content} onChange={this.handleInputChange} onKeyDown={this.handlerKeyUp}/>
+                    <input className="header-input" value={this.state.content} onChange={this.handleInputChange} onKeyDown={this.handlerKeyUp} />
                     <button className="header-add" onClick={this.addTodoItem}>添加</button>
                 </div>
             </div>
