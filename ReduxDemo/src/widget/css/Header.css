@@ -1,55 +1,59 @@
 .header {
     width: 100%;
-    height: 80px;
+    height: 1.066667rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: .266667rem;
 }
 
 .header-body {
-    width: 40%;
-    min-width: 750px;
-    height: 60px;
+    width: 9rem;
+    height: 1rem;
     justify-self: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(47, 47, 47, 0.9);
-    border-radius: 4px;
+    border-radius: .053333rem;
     border: 1px solid rgba(47, 47, 47, 0.9);
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: .133333rem;
+    padding-right: .133333rem;
     color: white;
 }
 
 .header-name {
-    width: 80px;
-    height: 26px;
+    width: 1rem;
+    height: .346667rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     font-size: 18px;
 }
 
 .header-input {
-    height: 26px;
+    height: .346667rem;
     display: flex;
     flex: 1;
-    border-radius: 4px;
+    border-radius: .053333rem;
     border: none;
-    padding-left: 8px;
-    padding-right: 8px;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: .1rem;
+    padding-right: .1rem;
+    margin-left: .266667rem;
+    margin-right: .266667rem;
     color: rgba(47, 47, 47, 0.9);
 }
 
 .header-add {
-    width: 60px;
-    height: 26px;
+    width: .8rem;
+    height: .346667rem;
     display: flex;
-    border-radius: 2px;
+    border-radius: .026667rem;
+    justify-content: center;
+    align-items: center;
     border: 1px solid white;
     background-color: white;
     color: rgba(47, 47, 47, 0.9);

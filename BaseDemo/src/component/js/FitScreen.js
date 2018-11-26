@@ -7,8 +7,10 @@ export default class FitScreen extends Component {
 
     render() {
         return (
-            <div>
-                屏幕适配
+            <div className='fitScreen'>
+                <div className='a'></div>
+                <div className='b'></div>
+                <div className='c'></div>
             </div>
         );
     };
