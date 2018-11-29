@@ -22,7 +22,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "amfe-flexible": "^2.2.1"
-  }
+  "devDependencies": {}
 }
