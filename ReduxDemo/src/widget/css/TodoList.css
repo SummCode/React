@@ -4,20 +4,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: .133333rem;
 }
 
 .todo-list-body {
-    width: 40%;
-    min-width: 750px;
+    width: 9rem;
     color: rgba(47, 47, 47, 0.8);
-    padding: 10px;
+    padding: .133333rem;
     background-color: #e0e0e0;
 }
 
 
 .todo-list-title {
-    height: 32px;
+    height: .426667rem;
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -27,12 +26,12 @@
     border-radius: 2px;
     border: 1px solid #fcfcfc;
     font-size: 16px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left:.133333rem;
+    padding-right: .133333rem;
 }
 
 .todo-list-content {
-    margin-top: 5px;
+    margin-top: .066667rem;
     border: none;
     font-weight: normal;
     font-size: 14px;
